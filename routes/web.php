@@ -31,6 +31,7 @@ Route::middleware(['auth', 'twofactor'])->prefix('admin')->group(function () {
 
   // For Dashboard
   Route::get('dashboard', 'Admin\HomeController@index')->name('admin.dashboard');
+Route::get('setting', 'Admin\SettingsController@index')->name('admin.setting.index');
 
   // For Module
   Route::get('modules', 'Admin\ModuleController@index')->name('admin.modules.index');
@@ -82,4 +83,34 @@ Route::middleware(['auth', 'twofactor'])->prefix('admin')->group(function () {
   Route::post('pages/update', 'Admin\PageController@update')->name('admin.pages.update');
   Route::get('pages/ajax', 'Admin\PageController@ajax')->name('admin.pages.ajax');
   Route::post('pages/delete', 'Admin\PageController@delete')->name('admin.pages.delete');
+
+  // For Category
+  Route::get('categorys', 'Admin\CategoryController@index')->name('admin.categorys.index');
+  Route::get('categorys/add', 'Admin\CategoryController@create')->name('admin.categorys.create');
+  Route::get('categorys/edit/{encrypted_id}', 'Admin\CategoryController@edit')->name('admin.categorys.edit');
+  Route::get('categorys/show/{encrypted_id}', 'Admin\CategoryController@show')->name('admin.categorys.show');
+  Route::post('categorys/store', 'Admin\CategoryController@store')->name('admin.categorys.store');
+  Route::post('categorys/update', 'Admin\CategoryController@update')->name('admin.categorys.update');
+  Route::get('categorys/ajax', 'Admin\CategoryController@ajax')->name('admin.categorys.ajax');
+  Route::post('categorys/delete', 'Admin\CategoryController@delete')->name('admin.categorys.delete');
+
+  // For Sub Category
+  Route::get('subcategorys', 'Admin\SubcategoryController@index')->name('admin.subcategorys.index');
+  Route::get('subcategorys/add', 'Admin\SubcategoryController@create')->name('admin.subcategorys.create');
+  Route::get('subcategorys/edit/{encrypted_id}', 'Admin\SubcategoryController@edit')->name('admin.subcategorys.edit');
+  Route::get('subcategorys/show/{encrypted_id}', 'Admin\SubcategoryController@show')->name('admin.subcategorys.show');
+  Route::post('subcategorys/store', 'Admin\SubcategoryController@store')->name('admin.subcategorys.store');
+  Route::post('subcategorys/update', 'Admin\SubcategoryController@update')->name('admin.subcategorys.update');
+  Route::get('subcategorys/ajax', 'Admin\SubcategoryController@ajax')->name('admin.subcategorys.ajax');
+  Route::post('subcategorys/delete', 'Admin\SubcategoryController@delete')->name('admin.subcategorys.delete');
+
+  // For Coordinate
+  Route::get('coordinate', 'Admin\CoordinateController@index')->name('admin.coordinate.index');
+  Route::get('coordinate/add', 'Admin\CoordinateController@create')->name('admin.coordinate.create');
+  Route::get('coordinate/edit/{encrypted_id}', 'Admin\CoordinateController@edit')->name('admin.coordinate.edit');
+  Route::get('coordinate/show/{encrypted_id}', 'Admin\CoordinateController@show')->name('admin.coordinate.show');
+  Route::post('coordinate/store', 'Admin\CoordinateController@store')->name('admin.coordinate.store');
+  Route::post('coordinate/update', 'Admin\CoordinateController@update')->name('admin.coordinate.update');
+  Route::get('coordinate/ajax', 'Admin\CoordinateController@ajax')->name('admin.coordinate.ajax');
+  Route::post('coordinate/delete', 'Admin\CoordinateController@delete')->name('admin.coordinate.delete');
 });

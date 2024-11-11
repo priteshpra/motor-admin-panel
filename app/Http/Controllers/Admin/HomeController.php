@@ -36,11 +36,11 @@ class HomeController extends Controller
 
     // Preparing Dashboard card Array.
     $dashboard_cards = [
-      ['Users', $users, Route('admin.users.index'), 'fa fa-dashboard'],
+    //   ['Users', $users, Route('admin.users.index'), 'fa fa-dashboard'],
       ['Calculate Data', $calc, Route('admin.users.index'), 'fa fa-calendar'],
       ['View Data', $view, Route('admin.users.index'), 'fa fa-dashboard'],
       ['Add Data', $add, Route('admin.users.index'), 'fa fa-dashboard'],
-      ['Settings', $setting, Route('admin.users.index'), 'fa fa-dashboard'],
+      ['Settings', $setting, Route('admin.setting.index'), 'fa fa-dashboard'],
       // ['News', $news, 'news.index'],
     ];
     $module_names = [
